@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto.woff2) format('woff2');
+  }
+  .font-secondary {
+    font-family: "Montserrat", sans-serif;
+}
+
+.hover-image-grow {
+  @apply transition-transform duration-500 ease-in-out transform hover:scale-110;
+}
+
+.active-tab {
+  @apply bg-titlepink text-white shadow-lg; 
+}
+.tab-button:hover,
+  .tab-button.active-tab {
+    @apply text-titlepink shadow-lg; 
+  }
+
+  .active-c {
+    @apply bg-titlepink text-white shadow-lg; 
+  }
+  .c-button:hover,
+    .c-button.active-c {
+      @apply text-titlepink shadow-lg; 
+    }
+  
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-scroll {
+    animation: scrollText 6s linear infinite;
+}
+.custom-left-inherit {
+    @apply left-[inherit];
+  }
+
+  .indicator{
+    transition: left .4s;
+  }
+
+  @keyframes textReveal {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .text-reveal {
+    animation: textReveal 1s ease-in-out forwards;
+  }
+  
+  .text-reveal-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .text-reveal-wrapper {
+    position: relative;
+    height: 5rem; 
+  }
+  
+  .text-reveal-item {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    line-height: 1; 
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .text-reveal-item.active {
+    opacity: 1;
+  }
+ 
